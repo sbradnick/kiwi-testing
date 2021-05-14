@@ -1,0 +1,12 @@
+kiwi-man-pages
+kiwi-pxeboot
+kiwi-systemdeps
+kiwi-systemdeps-bootloaders
+kiwi-systemdeps-containers
+kiwi-systemdeps-core
+kiwi-systemdeps-disk-images
+kiwi-systemdeps-filesystems
+kiwi-systemdeps-image-validation
+kiwi-systemdeps-iso-media
+kiwi-tools
+python3-kiwi

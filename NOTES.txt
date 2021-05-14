@@ -1,0 +1,9 @@
+;
+;;	MAKE SURE THE CORRECT wsl-appx PACKAGE IS INSTALLED!
+;
+# kiwi-ng --type appx system build --description ~scott/leap152 --target-dir /var/tmp/leap152
+# kiwi-ng --type appx system build --description ~scott/leap153 --target-dir /var/tmp/leap153
+# kiwi-ng --type appx system build --description ~scott/tumbleweed --target-dir /var/tmp/tumbleweed
+;
+;;	RESULTING .appx FILES HAVE NO DIGITAL SIGNATURE.
+;;	USE 'MSIX Packaging Tool' TO SIGN WITH SELF-GENERATED '.pfx'.

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<image schemaversion="6.1" name="opensuse-wsl">
+  <description type="system">
+    <author>SUSE WSL Team</author>
+    <contact>wsl@suse.com</contact>
+    <specification>openSUSE WSL Image</specification>
+  </description>
+  <preferences>
+    <type image="appx" metadata_path="/usr/share/wsl-appx"/>
+    <version>21.134</version>
+    <packagemanager>zypper</packagemanager>
+    <rpm-check-signatures>false</rpm-check-signatures>
+    <rpm-excludedocs>true</rpm-excludedocs>
+  </preferences>
+  <!--
+  <repository type="rpm-md">
+    <source path="obsrepositories:/"/>
+  </repository>
+  -->
+  <repository type="rpm-md" alias="kiwi" priority="1">
+    <source path="obs://Virtualization:Appliances:Builder/openSUSE_Tumbleweed"/>
+  </repository>
+  <repository type="rpm-md" alias="Tumbleweed" imageinclude="true">
+    <source path="obs://openSUSE:Tumbleweed/standard"/>
+  </repository>
+  <packages type="image">
+    <package name="ca-certificates"/>
+    <package name="ca-certificates-mozilla"/>
+    <package name="openSUSE-build-key"/>
+    <package name="sudo"/>
+    <package name="command-not-found"/>
+    <package name="sysconfig"/>
+    <package name="sysconfig-netconfig"/>
+    <package name="vim"/>
+    <package name="joe"/>
+    <package name="patterns-openSUSE-minimal_base"/>
+    <!-- not in minimal_base but expected by applications -->
+    <package name="system-user-nobody"/>
+    <!-- only recommended in pattern -->
+    <package name="iputils"/>
+    <package name="openssh"/>
+    <package name="wget"/>
+    <package name="screen"/>
+    <package name="less"/>
+    <package name="lsof"/>
+    <!--
+    <package name="man"/>
+    -->
+    <package name="zip"/>
+    <package name="bzip2"/>
+    <package name="dos2unix"/>
+    <package name="libyui-ncurses-pkg"/>
+    <package name="suse-module-tools"/>
+    <package name="kbd"/>
+    <package name="kmod"/>
+    <package name="thin-provisioning-tools"/>
+    <package name="device-mapper"/>
+    <package name="systemd"/>
+    <package name="udev"/>
+    <package name="hwdata"/>
+    <package name="pciutils"/>
+    <package name="yast2"/>
+    <package name="yast2-network"/>
+    <package name="yast2-installation"/>
+    <package name="libstorage-ng1"/>
+    <package name="libstorage-ng-ruby"/>
+    <package name="yast2-storage-ng"/>
+    <package name="yast2-packager"/>
+    <package name="yast2-firstboot"/>
+    <package name="yast2-firstboot-wsl"/>
+    <package name="aaa_base-extras"/>
+    <package name="aaa_base-wsl"/>
+    <!-- only in enhanced_base boo#1150379 -->
+    <package name="timezone"/>
+    <!-- needed for nullok hack in config.sh for now -->
+    <package name="pam-config"/>
+    <!-- Only used in config.sh and then removed again -->
+    <package name="live-add-yast-repos"/>
+  </packages>
+  <packages type="bootstrap">
+    <package name="filesystem"/>
+    <package name="openSUSE-release"/>
+    <!--
+    <package name="openSUSE-release-appliance-wsl"/>
+    -->
+    <!-- needed by tumbleweed -->    
+    <package name="zypper"/>    
+    <package name="gawk"/>
+    <package name="coreutils"/>
+  </packages>
+</image>
