@@ -7,7 +7,7 @@
   </description>
   <preferences>
     <type image="appx" metadata_path="/usr/share/wsl-appx"/>
-    <version>21.134</version>
+    <version>21.137</version>
     <packagemanager>zypper</packagemanager>
     <rpm-check-signatures>false</rpm-check-signatures>
     <rpm-excludedocs>true</rpm-excludedocs>

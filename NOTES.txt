@@ -1,9 +1,15 @@
 ;
 ;;	MAKE SURE THE CORRECT wsl-appx PACKAGE IS INSTALLED!
+;;	  note:
+;;	    - Tumbleweed needs AppxManifest.xml to have "Version" adjusted:
+;;	      <Identity Name="46932SUSE.openSUSETumbleweed" ProcessorArchitecture="x64" Publisher="E=home:jfkw@build.opensuse.org, CN=home:jfkw OBS Project" Version="2105.12.000.0"/>
+;;	    - config.xml should have <version></version> updated:
+;;	      <version>$(date +%g).$(date +%j)</version>
+;;	      <version>21.137</version> (for 2021 and 137th day of year)
 ;
-# kiwi-ng --type appx system build --description ~scott/leap152 --target-dir /var/tmp/leap152
-# kiwi-ng --type appx system build --description ~scott/leap153 --target-dir /var/tmp/leap153
-# kiwi-ng --type appx system build --description ~scott/tumbleweed --target-dir /var/tmp/tumbleweed
+# kiwi-ng --type appx system build --description ~scott/GIT/github/kiwi-testing/leap152 --target-dir /var/tmp/leap152
+# kiwi-ng --type appx system build --description ~scott/GIT/github/kiwi-testing/leap153 --target-dir /var/tmp/leap153
+# kiwi-ng --type appx system build --description ~scott/GIT/github/kiwi-testing/tumbleweed --target-dir /var/tmp/tumbleweed
 ;
 ;;	RESULTING .appx FILES HAVE NO DIGITAL SIGNATURE.
 ;;	USE 'MSIX Packaging Tool' TO SIGN WITH SELF-GENERATED '.pfx'.
