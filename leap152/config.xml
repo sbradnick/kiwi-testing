@@ -21,7 +21,11 @@
     <source path="obs://Virtualization:Appliances:Builder/openSUSE_Leap_15.2"/>
   </repository>
   <repository type="rpm-md" alias="Leap_15_2" imageinclude="true">
+    <!-- https://download.opensuse.org/distribution/leap/15.2/repo/oss/noarch/ -->
     <source path="obs://openSUSE:Leap:15.2/standard"/>
+  </repository>
+  <repository type="rpm-md" alias="Main_Update_Repository" imageinclude="true">
+    <source path="http://download.opensuse.org/update/leap/15.2/oss/"/>
   </repository>
   <packages type="image">
     <package name="ca-certificates"/>
@@ -49,6 +53,13 @@
     <package name="yast2-packager"/>
     <package name="yast2-firstboot"/>
     <package name="yast2-firstboot-wsl"/>
+    <!-- Not sure these are _required_ even though present in OBS build -->
+    <!--
+    <package name="yast2-bootloader"/>
+    <package name="cracklib-dict-small"/>
+    <package name="systemd-presets-branding-openSUSE"/>
+    <package name="ruby2.5-rubygem-cfa_grub2"/>
+    -->
     <package name="aaa_base-extras"/>
     <package name="aaa_base-wsl"/>
     <!-- only in enhanced_base boo#1150379 -->
